@@ -84,12 +84,13 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'neondb',
         'USER': 'neondb_owner',
         'PASSWORD': 'npg_TZwHu1fEIAa9',
         'HOST': 'ep-yellow-snow-a1d84sxc-pooler.ap-southeast-1.aws.neon.tech',
         'PORT': '5432',
+        'OPTIONS': {'sslmode': 'require'},
     }
 }
 
@@ -129,13 +130,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-#STATIC_ROOT = BASE_DIR / 'static'
-# settings.py
-#STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [BASE_DIR/'static']
+STATICFILES_DIRS = [
+    os.path.join (BASE_DIR, 'static'),
+]
 
-STATIC_ROOT = BASE_DIR/'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 
 # Default primary key field type
