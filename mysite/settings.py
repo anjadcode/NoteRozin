@@ -85,10 +85,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mydatabase',
-        'USER': 'notesuser',
-        'PASSWORD': 'mypassword',
-        'HOST': '127.0.0.1',
+        'NAME': 'neondb',
+        'USER': 'neondb_owner',
+        'PASSWORD': 'npg_TZwHu1fEIAa9',
+        'HOST': 'ep-yellow-snow-a1d84sxc-pooler.ap-southeast-1.aws.neon.tech',
         'PORT': '5432',
     }
 }
